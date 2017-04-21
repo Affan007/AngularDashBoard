@@ -2,10 +2,10 @@
   "name": "blur_admin",
   "version": "1.3.1",
   "engines": {
-    "node": "4.4.7",
-    "npm": "4.3.0"
+    "node": "7.5.0",
+    "npm":"4.3.0"
   },
-  "devDpendencies": {
+  "devDependencies": {
     "browser-sync": "~2.18.2",
     "browser-sync-spa": "~1.0.3",
     "chalk": "~1.1.1",
@@ -47,8 +47,6 @@
     "wrench": "~1.5.8"
   },
   "scripts": {
-    "start": "gulp serve",
-    "build":"gulp serve:dist"
-
+    "postinstall": "bower install"
   }
 }
