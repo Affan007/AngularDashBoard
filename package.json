@@ -46,11 +46,7 @@
     "wrench": "~1.5.8"
   },
   "scripts": {
-    "update-deps": "npm update",
-    "prestart": "npm install",
-    "start": "gulp serve:dist",
-    "pretest": "npm install",
-    "preupdate-webdriver": "npm install",
-    "preprotractor": "npm run update-webdriver"
+    "postinstall": "npm install",
+    "start": "gulp serve:dist"
   }
 }
