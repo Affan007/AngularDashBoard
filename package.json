@@ -48,9 +48,7 @@
   },
   "scripts": {
     "start": "gulp serve",
-    "build":"gulp serve:dist",
-    "postinstall": "npm install",
-    "pretest": "npm install"
+    "build":"gulp serve:dist"
 
   }
 }
