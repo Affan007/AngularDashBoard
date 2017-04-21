@@ -53,6 +53,7 @@
   "browser-sync-spa": "~1.0.3"
 },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "start": "gulp serve:dist"
   }
 }
