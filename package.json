@@ -81,7 +81,6 @@
 },
   "scripts": {
     "postinstall": "bower install",
-    "postinstall": "gulp default",
     "start": "gulp serve:dist"
   }
 }
