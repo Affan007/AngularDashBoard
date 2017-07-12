@@ -7,56 +7,69 @@
 
   angular.module('BlurAdmin.pages', [
     'ui.router',
+    // 'BlurAdmin.pages.ui',
+    // 'BlurAdmin.pages.components',
+    'BlurAdmin.sides.form',
+    'BlurAdmin.sides.summary',
+    'BlurAdmin.sides.reseller',
+    'BlurAdmin.sides.prospects',
+    'BlurAdmin.sides.IPTV',
+    'BlurAdmin.sides.tickets',
+    'BlurAdmin.sides.box'
+    // 'BlurAdmin.pages.tables',
+    // 'BlurAdmin.pages.charts',
+    // 'BlurAdmin.pages.maps',
+    // 'BlurAdmin.pages.profile'
 
-    'BlurAdmin.pages.dashboard',
-    'BlurAdmin.pages.ui',
-    'BlurAdmin.pages.components',
-    'BlurAdmin.pages.form',
-    'BlurAdmin.pages.tables',
-    'BlurAdmin.pages.charts',
-    'BlurAdmin.pages.maps',
-    'BlurAdmin.pages.profile',
   ])
       .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/signin');
+//     $urlRouterProvider.otherwise( function($injector) {
+//   var $state = $injector.get("$state");
+//   $state.go('/signin');
+// });
 
-    baSidebarServiceProvider.addStaticItem({
-      title: 'Pages',
-      icon: 'ion-document',
-      subMenu: [{
-        title: 'Sign In',
-        fixedHref: 'auth.html',
-        blank: true
-      }, {
-        title: 'Sign Up',
-        fixedHref: 'reg.html',
-        blank: true
-      }, {
-        title: 'User Profile',
-        stateRef: 'profile'
-      }, {
-        title: '404 Page',
-        fixedHref: '404.html',
-        blank: true
-      }]
-    });
-    baSidebarServiceProvider.addStaticItem({
-      title: 'Menu Level 1',
-      icon: 'ion-ios-more',
-      subMenu: [{
-        title: 'Menu Level 1.1',
-        disabled: true
-      }, {
-        title: 'Menu Level 1.2',
-        subMenu: [{
-          title: 'Menu Level 1.2.1',
-          disabled: true
-        }]
-      }]
-    });
+    // baSidebarServiceProvider.addStaticItem({
+    //   title: 'dashboard',
+    //   icon: 'ion-document',
+    //   url: '/dashboard',
+    //   templateUrl: 'app/pages/tickets/tickets.html',
+    //     sidebarMeta: {
+    //       order: 10,
+    //     },
+    //     // resolve: {
+    //     //     security: function(User,$location) {
+    //     //         //  return User.SetUser();
+    //     //         if(User.SetUser=='Owner'){
+    //     //           $location.path('/supportTickets');
+    //     //           title:''
+    //     //         }
+    //     //         else{
+    //     //           $location.path('/');
+    //     //         }
+    //     //
+    //     //         // console.log ();
+    //     //     }
+    //     // },
+    //   controller: 'ticketsCtrl'
+    // });
+    // baSidebarServiceProvider.addStaticItem({
+    //   title: 'Menu Level 1',
+    //   icon: 'ion-ios-more',
+    //   subMenu: [{
+    //     title: 'Menu Level 1.1',
+    //     disabled: true
+    //   }, {
+    //     title: 'Menu Level 1.2',
+    //     subMenu: [{
+    //       title: 'Menu Level 1.2.1',
+    //       disabled: true
+    //     }]
+    //   }]
+    // });
   }
 
 })();

@@ -1,0 +1,67 @@
+<div class="horizontal-scroll">
+  <!-- <div class="form-group select-page-size-wrap ">
+    <label>Rows on page
+      <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+              ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+      </select>
+    </label>
+  </div> -->
+  <table class="table" st-table="smartTableData">
+    <thead>
+    <tr class="sortable ">
+      <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+      <th st-sort="Customer">Customer</th>
+      <th st-sort="Device">Device</th>
+      <th st-sort="Server">Server</th>
+      <th st-sort="Months">Months</th>
+      <th st-sort="Amount">Amount</th>
+      <th st-sort="date">Date/Time</th>
+      <th st-sort="status">Status</th>
+      <th>Options</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th><input st-search="Customer" placeholder="Search Customer" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="Device" placeholder="Search Device" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="Server" placeholder="Search Server" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="Months" placeholder="Search Months" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="Amount" placeholder="Search Amount" class="input-sm form-control search-input"
+                type="search"/></th>
+      <th><input st-search="date" placeholder="Date" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="status" placeholder="Status" class="input-sm form-control search-input" type="search"/>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in smartTableData">
+      <td class="table-id">{{item.id}}</td>
+      <td>{{item.Customer}}</td>
+      <td>{{item.Device}}</td>
+      <td>{{item.Server}}</td>
+      <td>{{item.Months}}</td>
+      <td>{{item.Amount}}</td>
+      <td>{{item.date}}</td>
+      <td>{{item.status}}</td>
+      <td>
+        <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> -->
+        <!-- <a href="#"><i class="fa fa-pencil fa-fw"></i></a> -->
+        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+        <!-- <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-usd" aria-hidden="true"></i></a> -->
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="6" class="text-center">
+        <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

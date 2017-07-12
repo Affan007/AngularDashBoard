@@ -1,0 +1,202 @@
+<form>
+ <div class="col-md-4">
+   <div ba-panel ba-panel-title="Renew ">
+ <!-- <div class="form-group">
+   <label for="input01">Company</label>
+   <input type="text" class="form-control" id="input01" placeholder="Text">
+ </div> -->
+ <div class="form-group">
+   <label for="input02">Customer</label>
+   <input type="text" class="form-control" id="input02" placeholder="Text">
+ </div>
+
+ <div class="form-group">
+     <label for="textarea09">Server</label>
+   <ui-select ng-model="server"
+              class="btn-group bootstrap-select form-control"
+              ng-disabled="false"
+              append-to-body="true"
+              search-enabled="false">
+     <ui-select-match >
+       <span> {{$select.selected.label}}</span>
+     </ui-select-match>
+     <ui-select-choices repeat="standardItem in IPTVServer | filter: $select.search">
+       <span ng-bind-html="standardItem.label"></span>
+     </ui-select-choices>
+   </ui-select>
+ </div>
+ <div class="form-group">
+  <label for="input01">Notes</label>
+ <textarea placeholder="Notes" class="form-control" id="textarea01"></textarea>
+ </div>
+
+  <div class="form-group">
+      <label for="textarea09">Tag Department</label>
+    <ui-select ng-model="PickTagDep"
+               class="btn-group bootstrap-select form-control"
+               ng-disabled="false"
+               append-to-body="true"
+               search-enabled="false">
+      <ui-select-match placeholder="Tag Department">
+        <span> {{$select.selected.label}}</span>
+      </ui-select-match>
+      <ui-select-choices repeat="standardItem in TagDep | filter: $select.search">
+        <span ng-bind-html="standardItem.label"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+</div>
+
+</div>
+<div class="col-md-4">
+ <!-- <div class="form-group">
+   <label class="checkbox-inline custom-checkbox nowrap">
+     <input type="checkbox" id="inlineCheckbox01" value="CustomerAccount">
+     <span>Create Customer Account</spaCreate Customer Accountn>
+   </label>
+ </div> -->
+
+ <div ba-panel ba-panel-title="Subscription Details">
+
+   <div class="form-group">
+       <label for="textarea09">Subscription</label>
+     <ui-select ng-model="subscriptions"
+                class="btn-group bootstrap-select form-control"
+                ng-disabled="false"
+                append-to-body="true"
+                search-enabled="false">
+       <ui-select-match placeholder="Tag Department">
+         <span> {{$select.selected.label}}</span>
+       </ui-select-match>
+       <ui-select-choices repeat="standardItem in IPTVsubscriptions | filter: $select.search">
+         <span ng-bind-html="standardItem.label"></span>
+       </ui-select-choices>
+     </ui-select>
+   </div>
+
+
+   <div class="form-group">
+       <label for="textarea09">Currency</label>
+     <ui-select ng-model="currency"
+                class="btn-group bootstrap-select form-control"
+                ng-disabled="false"
+                append-to-body="true"
+                search-enabled="false">
+       <ui-select-match>
+         <span> {{$select.selected.label}}</span>
+       </ui-select-match>
+       <ui-select-choices repeat="standardItem in IPTVcurrency | filter: $select.search">
+         <span ng-bind-html="standardItem.label"></span>
+       </ui-select-choices>
+     </ui-select>
+   </div>
+
+   <div class="form-group">
+     <label for="textarea01">Amount</label>
+     <!-- <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea> -->
+     <input type="text" class="form-control" id="DeviceAmount" placeholder="0">
+   </div>
+
+   <div class="form-group">
+     <label for="textarea01">Discount</label>
+     <!-- <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea> -->
+     <input type="text" class="form-control" id="Discount" placeholder="0">
+   </div>
+
+   <div class="form-group">
+     <label for="textarea01">Tax</label>
+     <!-- <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea> -->
+     <input type="text" class="form-control" id="Tax" placeholder="0">
+   </div>
+
+   <div class="form-group">
+     <label for="textarea01">Total Amount</label>
+     <!-- <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea> -->
+     <input type="text" class="form-control" id="TotalAmount" placeholder="0">
+   </div>
+
+ </div>
+
+</div>
+
+<div class="col-md-4">
+<div ba-panel ba-panel-title="Payment Details">
+
+ <div class="form-group">
+     <label for="textarea09">Payment Method</label>
+   <ui-select ng-model="paymentMethod"
+              class="btn-group bootstrap-select form-control"
+              ng-disabled="false"
+              append-to-body="true"
+              search-enabled="false">
+     <ui-select-match>
+       <span> {{$select.selected.label}}</span>
+     </ui-select-match>
+     <ui-select-choices repeat="standardItem in IPTVpaymentMethod | filter: $select.search">
+       <span ng-bind-html="standardItem.label"></span>
+     </ui-select-choices>
+   </ui-select>
+ </div>
+
+ <div class="form-group">
+     <input type="checkbox" id="inlineCheckbox01" value="AddnewCard" ng-model="checked">
+     <span>Add new Card</span>
+   </label>
+ </div>
+
+<div ng-show="checked">
+ <div class="form-group">
+   <label for="textarea01">Name on Card</label>
+   <!-- <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea> -->
+   <input type="text" class="form-control" id="Name on card" placeholder="0">
+ </div>
+
+ <div class="form-group">
+   <label for="textarea01">Card Number</label>
+   <card-number-input class="form-control" name="ccNumber" ng-model="cardNumber" card-type="cardType"></card-number-input>
+ </div>
+
+ <div class="form-group">
+   <label for="textarea01">CVV</label>
+  <card-cvc-input class="form-control" name="ccCvc" ng-model="cardCvc"></card-cvc-input>
+ </div>
+ <div class="form-group">
+   <label for="textarea01">Expiry</label>
+   <card-expiry-input class="form-control" name="ccExpiry" ng-model="cardExpiry"></card-expiry-input>
+ </div>
+</div>
+
+
+ <div class="form-group">
+     <label for="textarea09">Auto Renew?</label>
+   <ui-select ng-model="autoRenew"
+              class="btn-group bootstrap-select form-control"
+              ng-disabled="false"
+              append-to-body="true"
+              search-enabled="false">
+     <ui-select-match>
+       <span> {{$select.selected.label}}</span>
+     </ui-select-match>
+     <ui-select-choices repeat="standardItem in IPTVautoRenew | filter: $select.search">
+       <span ng-bind-html="standardItem.label"></span>
+     </ui-select-choices>
+   </ui-select>
+ </div>
+ <div class="form-group">
+   <label for="textarea01">Transaction ID / Reference (Optional)</label>
+   <input type="text" class="form-control" id="Name on card">
+ </div>
+
+
+
+
+
+
+</div>
+</div>
+
+<div class="col-xs-12">
+<button type="submit" class="btn btn-primary">Save Report</button>
+<button type="submit" class="btn btn-warning">Clear</button>
+</div>
+</form>

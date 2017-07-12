@@ -1,0 +1,63 @@
+<div class="horizontal-scroll">
+  <div class="form-group select-page-size-wrap ">
+    <label>Rows on page
+      <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+              ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+      </select>
+    </label>
+  </div>
+  <table class="table" st-table="smartTableData">
+    <thead>
+    <tr class="sortable ">
+      <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+      <th st-sort="customer">Customer</th>
+      <th st-sort="mobile">Mobile</th>
+      <th st-sort="department">Department</th>
+      <th st-sort="subject">Subject</th>
+      <th st-sort="date">Date/Time</th>
+      <th st-sort="status">Status</th>
+      <th>Options</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th><input st-search="customer" placeholder="Search name" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="mobile" placeholder="Search mobile" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="department" placeholder="Search email" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="subject" placeholder="Search password" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="date" placeholder="Current Balance" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="status" placeholder="Due Balance" class="input-sm form-control search-input" type="search"/>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in smartTableData">
+      <td class="table-id">{{item.id}}</td>
+      <td>{{item.customer}}</td>
+      <td>{{item.mobile}}</td>
+      <td></a>{{item.department}}</td>
+      <td>{{item.subject}}</td>
+      <td>{{item.date}}</td>
+      <td>{{item.status}}</td>
+      <td>
+        <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-pencil fa-fw"></i></a>
+        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-usd" aria-hidden="true"></i></a>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="6" class="text-center">
+        <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

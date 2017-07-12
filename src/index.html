@@ -4,13 +4,27 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blur Admin</title>
+  <title>KuBox</title>
 
   <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
 
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96x96.png">
+  <script>
+  window.paceOptions = {
+    document: true, // disabled
+    eventLag: true,
+    restartOnPushState: true,
+    restartOnRequestAfter: true,
+    ajax: {
+        trackMethods: [ 'POST','GET','PUT']
+    }
+
+};
+  </script>
+  <script src="../bower_components/pace/pace.js"></script>
+ <link href="../bower_components/pace/pace.css" rel="stylesheet" />
 
   <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
   <!-- bower:css -->
@@ -25,8 +39,10 @@
   <!-- endbuild -->
 </head>
 <body>
-<div class="body-bg"></div>
-<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
+
+  <div ui-view></div>
+<!-- <div class="body-bg"></div> -->
+<!-- <main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
 
   <ba-sidebar></ba-sidebar>
   <page-top></page-top>
@@ -41,7 +57,7 @@
   <footer class="al-footer clearfix">
     <div class="al-footer-right">Created with <i class="ion-heart"></i></div>
     <div class="al-footer-main clearfix">
-      <div class="al-copy">Blur Admin 2016</div>
+      <div class="al-copy">KuBox 2016</div>
       <ul class="al-share clearfix">
         <li><i class="socicon socicon-facebook"></i></li>
         <li><i class="socicon socicon-twitter"></i></li>
@@ -52,11 +68,11 @@
   </footer>
 
   <back-top></back-top>
-</main>
+</main> -->
 
-<div id="preloader" ng-show="!$pageFinishedLoading">
+<!-- <div id="preloader" ng-show="!$pageFinishedLoading">
   <div></div>
-</div>
+</div> -->
 
 <!-- build:js(src) scripts/vendor.js -->
 <!-- bower:js -->

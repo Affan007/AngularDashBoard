@@ -1,0 +1,33 @@
+<form name="signupForm" novalidate
+          >
+  <div class="form-group">
+    <label for="input01">Old Password</label>
+    <input type="password" class="form-control" id="input01" placeholder="Old Password" ng-model="pass.oldPass" name="oldPass" required="required" >
+    <div ng-if="signupForm.oldPass.$touched || signupForm.$submitted">
+        <p ng-show="signupForm.oldPass.$error.required" class="help-block">Password is required</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="input02">New Passwword</label>
+    <!-- <input type="text" class="form-control" id="input02" placeholder="New Password" ng-model="newPass"> -->
+    <input type="password" class="form-control"  ng-model="pass.password" placeholder="Password" name="password" required="required" ng-minlength="6"/>
+               <div ng-if="signupForm.password.$touched || signupForm.$submitted">
+                   <p ng-show="signupForm.password.$error.required" class="help-block">Password is required</p>
+                   <p ng-show="signupForm.password.$error.minlength" class="help-block">Minimum 6 character</p>
+               </div>
+  </div>
+  <div class="form-group">
+    <label for="input02">Confirm Passwword</label>
+    <!-- <input type="text" class="form-control" id="input03" placeholder="Confirm Password" ng-model="confirmPass" ng-pattern="\b{{newPass}}\b"> -->
+    <input type="password" class="form-control"  name="confirm_password" ng-model="confirm_password" placeholder="Confirm password" match-password="pass.password" required>
+               <div ng-if="signupForm.confirm_password.$touched || signupForm.$submitted">
+                   <p ng-show="signupForm.confirm_password.$error.required" class="help-block">Confirm password is required</p>
+                   <p ng-show="signupForm.confirm_password.$error.matchPassword && !signupForm.confirm_password.$error.required" class="help-block">Confirm password didn't match</p>
+               </div>
+  </div>
+  <div class="form-group">
+ <button type="submit" class="btn btn-primary" ng-click="UpdatePassword(signupForm.$valid)">Submit</button>
+ </div>
+
+
+</form>

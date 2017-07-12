@@ -78,7 +78,7 @@
     cursor: pointer;
     position: relative;
     border-radius: 5px;
-    margin: 0 0 0 80px;
+    // margin: 0 0 0 80px;
     padding: 5px 20px;
     color: $default-text;
     width: 280px;
@@ -89,7 +89,7 @@
       width: inherit;
       max-width: calc(100% - 80px);
       height: inherit;
-      min-height: 60px;
+      // min-height: 60px;
       &:before {
         display: block;
       }

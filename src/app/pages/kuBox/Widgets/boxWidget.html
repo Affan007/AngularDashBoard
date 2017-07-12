@@ -1,0 +1,94 @@
+<div class="horizontal-scroll"  ng-init="boxDetails();">
+  <div class="form-group select-page-size-wrap ">
+    <label>Rows on page
+      <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+              ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+      </select>
+    </label>
+  </div>
+  <table class="table" st-table="KuBoxDetails" st-safe-src="kuBackup">
+    <thead>
+    <tr class="sortable ">
+      <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+      <th st-sort="title">title</th>
+      <th st-sort="kuUsername">kuUsername</th>
+      <th st-sort="kuPassword">kuPassword</th>
+      <th st-sort="kuPassword">Mac Adress</th>
+      <!-- <th st-sort="pass">Password</th>
+      <th st-sort="currentBalance">Current Balance</th>
+      <th st-sort="dueBalance">Due Balance</th> -->
+      <th>Box</th>
+      <th>Kodi</th>
+      <th>Settings</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th><input st-search="title" placeholder="Search title" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="kuUsername" placeholder="Search User Name" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="kuPassword" placeholder="Search password" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="mac" placeholder="Search Mac Adress" class="input-sm form-control search-input"
+                 type="search"/></th>
+                 <th></th>
+                 <th></th>
+                 <th></th>
+      <!-- <th><input st-search="pass" placeholder="Search password" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="currentBalance" placeholder="Current Balance" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="dueBalance" placeholder="Due Balance" class="input-sm form-control search-input" type="search"/>
+      </th> -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in KuBoxDetails">
+      <td class="table-id">{{item.id}}</td>
+      <td ng-dblclick="editTodo(item)"><span ng-hide="item.editing">{{item.title}}</span>
+        <form ng-submit="doneEditing(item)" ng-show="item.editing">
+             <input class="custominput"ng-model="item.title">
+         </form>
+      </td>
+      <td ng-dblclick="editTodo1(item)"><span ng-hide="item.editing1">{{item.kuUsername}}</span>
+        <form ng-submit="doneEditing(item)" ng-show="item.editing1">
+           <input class="custominput"ng-model="item.kuUsername">
+       </form>
+    </td>
+      <td ng-dblclick="editTodo2(item)"><span ng-hide="item.editing2">{{item.kuPassword}}</span>
+      <form ng-submit="doneEditing(item)" ng-show="item.editing2">
+           <input class="custominput"ng-model="item.kuPassword">
+       </form>
+      </td>
+      <td ng-dblclick="editTodo3(item)"><span ng-hide="item.editing3">{{item.mac}}</span>
+      <form ng-submit="doneEditing(item)" ng-show="item.editing3">
+           <input class="custominput"ng-model="item.mac">
+       </form>
+      </td>
+      <!-- <td><a class="email-link" ng-href="mailto:{{item.email}}"></a>{{item.email}}</td> -->
+      <!-- <td>{{item.pass}}</td>
+      <td>{{item.currentBalance}}</td>
+      <td>{{item.dueBalance}}</td> -->
+      <td>
+        <input type="checkbox" class="toggle" ng-model="item.isEnabled" ng-click="doneEditing(item)">
+      <!-- <ba-switcher switcher-style="primary" switcher-value="item.isEnabled" ng-model="item.isEnabled" ng-click="doneEditing(item)"></ba-switcher> -->
+      </td>
+      <td>
+          <input type="checkbox" class="toggle" ng-model="item.kodiEnabled" ng-click="doneEditing(item)">
+      <!-- <ba-switcher switcher-style="primary" switcher-value="item.kodiEnabled" ng-click="doneEditing(item)"></ba-switcher> -->
+      </td>
+      <td>
+          <input type="checkbox" class="toggle" ng-model="item.settingsEnabled" ng-click="doneEditing(item)">
+      <!-- <ba-switcher switcher-style="primary" switcher-value="item.settingsEnabled" ng-click="doneEditing(item)"></ba-switcher> -->
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="6" class="text-center">
+        <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

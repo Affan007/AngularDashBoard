@@ -83,6 +83,33 @@
                 return (a.level - b.level) * 100 + a.order - b.order;
               });
         }
+        // function defineMenuItemStates(serverMenus) {
+        //         return $state.get()
+        //             .filter(function (s) {
+        //                 return s.sidebarMeta;
+        //             })
+        //             .map(function (s) {
+        //                 var meta = s.sidebarMeta;
+        //                 var menuAccess={};
+        //                 serverMenus.forEach(function (item) {
+        //                     if (item.RouteName === s.name) {
+        //                         menuAccess ={
+        //                             name: s.name,
+        //                             title: item.Title,
+        //                             level: (s.name.match(/\./g) || []).length,
+        //                             order: item.Order,
+        //                             icon: s.sidebarMeta.icon,
+        //                             stateRef: s.name,
+        //                         }
+        //                         return;
+        //                     }
+        //                 });
+        //                 return menuAccess;
+        //             })
+        //             .sort(function (a, b) {
+        //                 return (a.level - b.level) * 100 + a.order - b.order;
+        //             });
+        //     }
 
         function shouldMenuBeCollapsed() {
           return window.innerWidth <= layoutSizes.resWidthCollapseSidebar;

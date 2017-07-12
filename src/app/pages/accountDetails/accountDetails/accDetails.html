@@ -1,0 +1,50 @@
+<form ng-init="UserInfo();">
+  <div class="form-group">
+    <label for="input01">Company</label>
+    <input type="text" class="form-control" id="input01" placeholder="Not Provided" ng-model="MyInfo.company" ng-disabled='true'>
+  </div>
+  <div class="form-group">
+    <label for="input02">First Name</label>
+    <input type="text" class="form-control" id="input02" placeholder="Not Provided" ng-model="MyInfo.firstName" ng-disabled='true'>
+  </div>
+  <div class="form-group">
+    <label for="input03">Last Name</label>
+    <!-- <input type="text" class="form-control form-control-rounded" id="input03" placeholder="Rounded Corners"> -->
+    <input type="text" class="form-control" id="input03" placeholder="Not Provided" ng-model="MyInfo.lastName" ng-disabled='true'>
+  </div>
+  <div class="form-group">
+    <label for="input04">Street Adress</label>
+    <!-- <input type="text" class="form-control" id="input04" placeholder="With help">
+    <span class="help-block sub-little-text">A block of help text that breaks onto a new line and may extend beyond one line.</span> -->
+    <input type="text" class="form-control" id="input04" placeholder="Not Provided" ng-model="MyInfo.addressLine1" ng-disabled='true'>
+  </div>
+  <div class="form-group">
+    <label for="input05">City</label>
+  <input type="text" class="form-control" id="input05" placeholder="Not Provided" ng-model="MyInfo.city" ng-disabled='true'>
+  </div>
+
+  <div class="form-group">
+    <label for="textarea01">Phone</label>
+    <!-- <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea> -->
+    <input type="text" class="form-control" id="input06" placeholder="Not Provided" ng-model="MyInfo.phone" ng-disabled='true'>
+  </div>
+  <div class="form-group">
+    <label for="textarea01">Mobile</label>
+    <!-- <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea> -->
+    <input type="text" class="form-control" id="input07" placeholder="Not Provided" ng-model="MyInfo.mobile" ng-disabled='true'>
+  </div>
+  <div class="form-group">
+    <label for="textarea01">Email Adress</label>
+    <!-- <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea> -->
+    <input type="text" class="form-control" id="input08" placeholder="Not Provided" ng-model="MyInfo.email" ng-disabled='true'>
+  </div>
+</div>
+
+
+  <!-- <div class="form-group">
+    <input type="text" class="form-control input-sm" id="input2" placeholder="Small Input">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control input-lg" id="input4" placeholder="Large Input">
+  </div> -->
+</form>

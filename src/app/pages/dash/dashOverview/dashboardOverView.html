@@ -1,0 +1,120 @@
+<div class="" ng-init="Overview();OverviewParteners()">
+  <div class="row">
+<div class="col-md-3 col-lg-3">
+  <h1 class="salesH1"> All Sales</h1>
+</div>
+<div >
+  <div class="col-md-2 col-lg-2">
+    <div ba-panel ba-panel-title="Done" >
+      <h1>{{SalesOverview.count}}</h1>
+    </div>
+  </div>
+  <div class="col-md-2 col-lg-2">
+    <div ba-panel ba-panel-title="In Progress" >
+      <h1>{{SalesOverview.inProgress}}</h1>
+    </div>
+  </div>
+  <div class="col-md-2 col-lg-2">
+    <div ba-panel ba-panel-title="Total Amount" >
+      <h1>{{SalesOverview.totalAmount}}</h1>
+    </div>
+  </div>
+  <div class="col-md-2 col-lg-2">
+    <div ba-panel ba-panel-title="Cleared Amount" >
+      <h1>{{SalesOverview.clearedAmount}}</h1>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-3 col-lg-3">
+<h1 class="salesH1"> Partners</h1>
+</div>
+<!-- <div> -->
+  <!-- <div>{{sales}}</div> -->
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="Sales" >
+    <h1>{{partenersOverview.sales}}</h1>
+  </div>
+</div>
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="In Progress" >
+    <h1>{{partenersOverview.inProgress}}</h1>
+  </div>
+</div>
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="Earned" >
+    <h1>{{partenersOverview.totalAmount}}</h1>
+  </div>
+</div>
+<!-- </div> -->
+</div>
+
+<div class="row">
+<div class="col-md-3 col-lg-3">
+<h1 class="salesH1"> Resellers</h1>
+</div>
+
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="Support Tickets" >
+    <h1>{{resselersOverview.supportTickets}}</h1>
+  </div>
+</div>
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="Sales" >
+    <h1>{{resselersOverview.sales}}</h1>
+  </div>
+</div>
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="Delivered" >
+    <h1>{{resselersOverview.delivered}}</h1>
+  </div>
+</div>
+<!-- </div> -->
+</div>
+
+<div class="row">
+<div class="col-md-3 col-lg-3">
+<h1 class="salesH1"> Prospects</h1>
+</div>
+
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="Later" >
+    <h1>{{prospectsOverview.later}}</h1>
+  </div>
+</div>
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="Pending" >
+    <h1>{{prospectsOverview.prospect}}</h1>
+  </div>
+</div>
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="Never" >
+    <h1>{{prospectsOverview.never}}</h1>
+  </div>
+</div>
+<div class="col-md-2 col-lg-2">
+  <div ba-panel ba-panel-title="Confirm" >
+    <h1>{{prospectsOverview.customer}}</h1>
+  </div>
+</div>
+<!-- </div> -->
+</div>
+
+
+
+<!-- <div class="row">
+<div class="col-md-3 col-lg-3">
+<h1 class="salesH1"> Partners</h1>
+</div>
+<div class="col-md-3 col-lg-3" ng-repeat="(key, value) in stats">
+  <div ba-panel ba-panel-title="{{key}}" >
+    <h1>USD {{value}}</h1>
+
+  </div>
+</div>
+</div> -->
+
+</div>

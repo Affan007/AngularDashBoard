@@ -1,0 +1,67 @@
+<div class="horizontal-scroll">
+  <div class="form-group select-page-size-wrap ">
+    <label>Rows on page
+      <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+              ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+      </select>
+    </label>
+  </div>
+  <table class="table" st-table="smartTableData" st-safe-src="dataReq" ng-init="prospectSummary();">
+    <thead>
+    <tr class="sortable ">
+      <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+      <th st-sort="firstName">First Name</th>
+      <th st-sort="lastName">Last Name</th>
+      <th st-sort="phone">Phone</th>
+      <th st-sort="city">City</th>
+      <th st-sort="email">Email Adress</th>
+      <th st-sort="date">Date/Time</th>
+      <th st-sort="status">Status</th>
+      <th>Options</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th><input st-search="firstName" placeholder="Search First Name" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="lastName" placeholder="Search Last Name" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="phone" placeholder="Search Phone" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="city" placeholder="Search City" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="email" placeholder="Email" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="date" placeholder="Date" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="status" placeholder="Status" class="input-sm form-control search-input" type="search"/>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in smartTableData">
+      <td class="table-id">{{item.User_V}}</td>
+      <td>{{item.firstName}}</td>
+      <td>{{item.lastName}}</td>
+      <td>{{item.phone}}</td>
+      <td>{{item.city}}</td>
+      <td><a class="email-link" ng-href="mailto:{{item.email}}"></a>{{item.email}}</td>
+      <td>{{item.date}}</td>
+      <td>{{item.status}}</td>
+      <td>
+        <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> -->
+        <a href="#"><i class="fa fa-pencil fa-fw"></i></a>
+        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+        <!-- <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-usd" aria-hidden="true"></i></a> -->
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="6" class="text-center">
+        <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

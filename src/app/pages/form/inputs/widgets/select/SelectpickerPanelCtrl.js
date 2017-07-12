@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.form')
+  angular.module('BlurAdmin.sides.form')
     .controller('SelectpickerPanelCtrl', SelectpickerPanelCtrl);
 
   /** @ngInject */
@@ -88,5 +88,3 @@
 
   }
 })();
-
-

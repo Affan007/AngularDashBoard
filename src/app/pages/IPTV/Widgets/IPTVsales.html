@@ -1,0 +1,67 @@
+<div class="horizontal-scroll" >
+  <!-- <div class="form-group select-page-size-wrap ">
+    <label>Rows on page
+      <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+              ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+      </select>
+    </label>
+  </div> -->
+  <table class="table" st-table="smartTableData" st-safe-src="dataReq" ng-init="SalesSummary();">
+    <thead>
+    <tr class="sortable ">
+      <th class="table-id" st-sort="User_V" st-sort-default="true">#</th>
+      <th st-sort="customer">Customer</th>
+      <th st-sort="serialNo">Serial No</th>
+      <th st-sort="model">Model</th>
+      <th st-sort="server">Server</th>
+      <th st-sort="date">Date/Time</th>
+      <th st-sort="expiry">Expiry Date</th>
+      <th st-sort="status">Status</th>
+      <th>Options</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th><input st-search="customer" placeholder="Search Customer" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="serialNo" placeholder="Search Serial No" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="model" placeholder="Search Model" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="server" placeholder="Search Server" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="date" placeholder="Date" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="expiry" placeholder="expiry" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <th><input st-search="status" placeholder="Status" class="input-sm form-control search-input" type="search"/>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in smartTableData">
+      <td class="table-id">{{item.User_V}}</td>
+      <td>{{item.customer}}</td>
+      <td>{{item.serialNo}}</td>
+      <td>{{item.model}}</td>
+      <td>{{item.server}}</td>
+      <td>{{item.date}}</td>
+      <td>{{item.expiry}}</td>
+      <td>{{item.status}}</td>
+      <td>
+        <!-- <a href="#"><i class="fa fa-check" aria-hidden="true"></i></a> -->
+        <!-- <a href="#"><i class="fa fa-pencil fa-fw"></i></a> -->
+        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a>
+        <!-- <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-usd" aria-hidden="true"></i></a> -->
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="6" class="text-center">
+        <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

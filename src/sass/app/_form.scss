@@ -1,3 +1,59 @@
+.toggle {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+    border-radius: 10px;
+
+  border: 1px solid #e85656;
+  width: 62px;
+  height: 27px;
+
+  vertical-align: -8px;
+
+  outline: none!important;
+// color: black;
+  cursor: pointer;
+
+  &::before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 30px;
+    outline: none;
+    bottom: 0;
+    width: 30px;
+    height: 25px;
+    background-color: #e85656;
+    // color: black;
+    border-color: #e85656;
+    border-radius: 10px;
+    content: 'OFF';
+    line-height: 25px;
+    text-align: center;
+    font-size: smaller;
+    color: #fff;
+    transition: all .1s;
+  }
+
+  &:checked {
+    border-color: #1f9d90;
+    border-radius: 10px;
+    // color:white;
+    outline: none;
+      border: 1px solid #1f9d90;
+    &::before {
+      right: 0;
+      left: 30px;
+      background-color: #1f9d90;
+      border-radius: 10px;
+      content: 'ON';
+    }
+  }
+}
+
+
 .label {
   border-radius: 0;
 }
@@ -98,6 +154,8 @@ textarea.form-control {
 .switcher-container {
   margin-right: 10px;
   font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 10px;
   input {
     display: none;
   }
@@ -643,4 +701,3 @@ label.custom-input-danger {
 .sub-little-text {
   font-size: 12px;
 }
-

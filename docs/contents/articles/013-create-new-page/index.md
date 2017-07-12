@@ -6,7 +6,7 @@ group: Customization
 template: article.jade
 ---
 
-Blur admin uses [Angular UI router](https://github.com/angular-ui/ui-router) for navigation. 
+KuBox uses [Angular UI router](https://github.com/angular-ui/ui-router) for navigation. 
 That means to create new page you need to basically configure `ui-router` state.
 
 We strongly recommend to follow pages structure in your application. 

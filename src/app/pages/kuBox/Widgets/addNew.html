@@ -1,0 +1,29 @@
+<form>
+  <div class="col-md-8 col-md-offset-2">
+    <div ba-panel ba-panel-title="Basic Info">
+  <div class="form-group">
+    <label for="input01">Title</label>
+    <input type="text" class="form-control" id="input01" placeholder="Text" ng-model="addbox.title">
+  </div>
+  <div class="form-group">
+    <label for="input02">Mac Adress</label>
+    <input type="text" class="form-control" id="input02" placeholder="Text" ng-model="addbox.mac">
+  </div>
+  <div class="form-group">
+    <label for="input02">Ku UserName</label>
+    <input type="text" class="form-control" id="input02" placeholder="Text" ng-model="addbox.kuUsername">
+  </div>
+  <div class="form-group">
+    <label for="input02">KU Password</label>
+    <input type="text" class="form-control" id="input02" placeholder="Text" ng-model="addbox.kuPassword">
+  </div>
+</div>
+</div>
+
+<div class="col-md-8 col-md-offset-2">
+<!-- <button type="submit" class="btn btn-primary" ng-click="boxAdd();">Submit</button> -->
+<button type="submit" class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/kuBox/Widgets/warningAddkuBox.html')"
+>Submit</button>
+<button type="submit" class="btn btn-warning" ng-click="boxclear();">Clear</button>
+</div>
+</form>

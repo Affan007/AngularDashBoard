@@ -1,0 +1,54 @@
+<div class="horizontal-scroll" ng-init="revenue();">
+  <div class="form-group select-page-size-wrap ">
+    <label>Rows on page
+      <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+              ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+      </select>
+    </label>
+  </div>
+  <table class="table" st-table="final" st-safe-src="final1" >
+    <thead>
+    <tr class="sortable ">
+      <!-- <th></th> -->
+      <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+      <th st-sort="date">Date</th>
+      <th st-sort="amount">Amount</th>
+      <th st-sort="revenue">Revenue</th>
+      <th st-sort="sales">Sales</th>
+      <th></th>
+      <!-- <th st-sort="notes">Notes</th> -->
+    </tr>
+    <tr>
+      <th></th>
+      <th><input st-search="date" placeholder="Search amount" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="amount" placeholder="Search amount" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="revenue" placeholder="Search Revenue" class="input-sm form-control search-input"
+                 type="search"/></th>
+      <th><input st-search="sales" placeholder="Search no of sales" class="input-sm form-control search-input" type="search"/>
+      </th>
+      <!-- <th><input st-search="notes" placeholder="Search notes" class="input-sm form-control search-input" type="search"/>
+      </th> -->
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="value in final">
+      <td class="table-id">{{value.id}}</td>
+      <td>{{value.date}}</td>
+      <td>{{value.amount}}</td>
+      <td>{{value.revenue}}</td>
+      <td>{{value.sales}}</td>
+      <!-- <td><a class="email-link" ng-href="mailto:{{item.email}}">{{item.paymentDate}}</a></td> -->
+      <!-- <td>{{item.notes}}</td> -->
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="6" class="text-center">
+        <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

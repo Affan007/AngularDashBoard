@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.dashboard')
+  angular.module('BlurAdmin.sides')
       .controller('DashboardTodoCtrl', DashboardTodoCtrl);
 
   /** @ngInject */
@@ -32,7 +32,7 @@
       { text: 'Ei cum solet appareat, ex est graeci mediocritatem' },
       { text: 'Get in touch with akveo team' },
       { text: 'Write email to business cat' },
-      { text: 'Have fun with blur admin' },
+      { text: 'Have fun with KuBox' },
       { text: 'What do you think?' },
     ];
 

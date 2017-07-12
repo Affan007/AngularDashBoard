@@ -1,0 +1,43 @@
+<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
+    <page-top></page-top>
+    <ba-sidebar></ba-sidebar>
+    <div class="al-main">
+        <div class="al-content">
+            <content-top></content-top>
+            <div ui-view>
+              <div class="widgets" >
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <div
+                        ba-panel
+                        ba-panel-title="My Account Details"
+                        ba-panel-class="with-scroll">
+                        <acc-details></acc-details>
+                        <!-- <div include-with-scope="app/pages/accountDetails/Widgets/myAccountWidget.html"></div> -->
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div
+                        ba-panel
+                        ba-panel-title="Change Password"
+                        ba-panel-class="with-scroll">
+                        <change-pass></change-pass>
+                      <!-- <div include-with-scope="app/pages/accountDetails/Widgets/ChangePassword.html"></div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <back-top></back-top>
+</main>
+<div id="preloader" ng-show="!$pageFinishedLoading">
+    <div>
+
+
+    </div>
+</div>

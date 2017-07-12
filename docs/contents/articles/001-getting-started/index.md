@@ -8,7 +8,7 @@ template: article.jade
 
 ## What is BlurAdmin?
 
-Blur admin is Angular front-end Admin Dashboard template. That means all data you can see on graphs, charts tables is hardcoded in Javascript. You can use any backend you want with it without limitations.
+KuBox is Angular front-end Admin Dashboard template. That means all data you can see on graphs, charts tables is hardcoded in Javascript. You can use any backend you want with it without limitations.
 
 ## How can it help me?
 

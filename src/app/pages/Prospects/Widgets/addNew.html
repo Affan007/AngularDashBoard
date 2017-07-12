@@ -1,0 +1,108 @@
+<form>
+  <div class="col-md-6">
+    <div ba-panel ba-panel-title="Basic Info">
+  <!-- <div class="form-group">
+    <label for="input01">Company</label>
+    <input type="text" class="form-control" id="input01" placeholder="Text">
+  </div> -->
+  <div class="form-group">
+    <label for="input02">First Name</label>
+    <input type="text" class="form-control" id="input02" placeholder="Text">
+  </div>
+  <div class="form-group">
+    <label for="input03">Last Name</label>
+    <!-- <input type="text" class="form-control form-control-rounded" id="input03" placeholder="Rounded Corners"> -->
+    <input type="text" class="form-control" id="input03" placeholder="Text">
+  </div>
+  <!-- <div class="form-group">
+    <label for="input04">Street Adress</label>
+    <input type="text" class="form-control" id="input04" placeholder="Text">
+  </div> -->
+  <div class="form-group">
+    <label for="input05">City</label>
+  <input type="text" class="form-control" id="input05" placeholder="Text">
+  </div>
+  <!-- <div class="form-group">
+    <label for="input05">Zip/Postal Code</label>
+  <input type="text" class="form-control" id="input05" placeholder="Text">
+  </div> -->
+
+  <div class="form-group">
+    <label for="textarea01">Phone No</label>
+    <!-- <textarea placeholder="Default Input" class="form-control" id="textarea01"></textarea> -->
+    <input type="text" class="form-control" id="input06" placeholder="Text">
+  </div>
+  <div class="form-group">
+    <label for="input01">Email Adress</label>
+    <input type="email" class="form-control" id="email" placeholder="email">
+  </div>
+
+  <div class="form-group">
+      <label for="textarea09">How Hear?</label>
+    <ui-select ng-model="HearLabel"
+               class="btn-group bootstrap-select form-control"
+               ng-disabled="false"
+               append-to-body="true"
+               search-enabled="false">
+      <ui-select-match placeholder="Standard Select">
+        <span> {{$select.selected.label}}</span>
+      </ui-select-match>
+      <ui-select-choices repeat="standardItem in HowHear | filter: $select.search">
+        <span ng-bind-html="standardItem.label"></span>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="form-group">
+    <label for="input01">Notes</label>
+  <textarea placeholder="Notes" class="form-control" id="textarea01"></textarea>
+  </div>
+</div>
+</div>
+<div class="col-md-6">
+  <div class="form-group">
+    <label class="checkbox-inline custom-checkbox nowrap">
+      <input type="checkbox" id="inlineCheckbox01" value="CustomerAccount">
+      <span>Create Customer Account</spaCreate Customer Accountn>
+    </label>
+  </div>
+
+  <div ba-panel ba-panel-title="Email Prospect">
+    <div class="form-group">
+      <label class="checkbox-inline custom-checkbox nowrap">
+        <input type="checkbox" id="inlineCheckbox01" value="CompanyIntroduction">
+        <span>Company Introduction</span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="checkbox-inline custom-checkbox nowrap">
+        <input type="checkbox" id="inlineCheckbox02" value="IPTVIntroduction">
+        <span>	IPTV Introduction</span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="checkbox-inline custom-checkbox nowrap">
+        <input type="checkbox" id="inlineCheckbox02" value="HomePhoneIntroduction">
+        <span>Home Phone Introduction</span>
+      </label>
+    </div>
+  </div>
+<div ba-panel ba-panel-title="Reminder">
+  <div class="col-xlg-6 col-md-6 col-sm-6">
+      <label>Selected date is: <em>{{dt | date:'fullDate' }}</em></label>
+      <div class="uib-datepicker-wrap">
+          <uib-datepicker ng-model="dt" datepicker-options="options"></uib-datepicker>
+      </div>
+  </div>
+  <div class="col-xlg-6 col-md-6 col-sm-6">
+    <div class="form-group">
+      <label for="input01">Reminder(optional)</label>
+    <textarea placeholder="Reminder" class="form-control" id="textarea02"></textarea>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-xs-12">
+<button type="submit" class="btn btn-primary">Save Report</button>
+<button type="submit" class="btn btn-warning">Clear</button>
+</div>
+</form>
